@@ -31,14 +31,8 @@ function handleCommand(message) {
     if (command && !parameter) {
         switch (command) {
             case 'summon':
-		description: "Summons me to your voice channel",
-		parameters: [],
-		execute: function(message, params) {
-			if (message.member.voiceChannel) {
-				summon(message.member.voiceChannel);
-			} else {
-				message.reply("You should join a voice channel first.");
-			}
+			    	message.reply('pong');
+
 	}
 }
 
