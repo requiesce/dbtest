@@ -11,9 +11,26 @@ client.on('message', message => {
   	}
 	
     if (message.content === '!summon') {
-    	message.reply('im here :heart:');
+    	//message.reply('im here :heart:');
+	    		if (message.member.voiceChannel) {
+				summon(message.member.voiceChannel);
+			} else {
+				message.reply("You should join a voice channel first.");
+			}
   	}
 });
+
+function summon(voiceChannel)
+{
+	voiceChannel.join().then(connection => {voice_connection = connection;}).catch(console.error);
+	setTimeout(function () {
+		if (!voiceChannel.members.get(bot.user.id))
+		{
+			//restart();
+		}			
+	}, 5000);
+}
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
