@@ -10,10 +10,14 @@ client.on('message', message => {
     	message.reply('pong');
   	}
 	
-    if (!message.author.bot)
-	{
-        handleCommand(message);
-    }	
+     if (message.content === 'summon') {
+    	message.reply('im here');
+  	}
+	
+   // if (!message.author.bot)
+//	{
+//        handleCommand(message);
+//    }	
 });
 
 
@@ -31,7 +35,14 @@ function handleCommand(message) {
     if (command && !parameter) {
         switch (command) {
             case 'summon':
-			    	message.reply('pong');
+		description: "Summons me to your voice channel",
+		parameters: [],
+		execute: function(message, params) {
+			if (message.member.voiceChannel) {
+				summon(message.member.voiceChannel);
+			} else {
+				message.reply("You should join a voice channel first.");
+			}
 
 	}
 }
