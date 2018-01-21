@@ -22,7 +22,6 @@ client.on('message', message => {
 
 function summon(voiceChannel)
 {
-	text_channel.sendMessage("I'm being summoned by an inner function)");
 	voiceChannel.join().then(connection => {voice_connection = connection;}).catch(console.error);
 	setTimeout(function () {
 		if (!voiceChannel.members.get(bot.user.id))
