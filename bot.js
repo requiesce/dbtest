@@ -23,9 +23,20 @@ function summon(voiceChannel)
 	setTimeout(function () {
 		if (!voiceChannel.members.get(bot.user.id))
 		{
-			restart();
+			//restart();
 		}			
 	}, 5000);
+}
+
+function datestamp()
+{
+	return '[' + new Date().toUTCString() + '] ';
+}
+
+function restart()
+{
+	console.log(datestamp() + 'Restarted by NodeJS');
+	process.exit();
 }
 
 
