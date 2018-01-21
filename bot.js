@@ -13,10 +13,13 @@ client.on('message', message => {
     if (message.content === '!summon') {
     	//message.reply('im here :heart:');
 	    		if (message.member.voiceChannel) {
-				summon(message.member.voiceChannel);
-			} else {
-				message.reply("You should join a voice channel first.");
-			}
+	voiceChannel.join().then(connection => {voice_connection = connection;}).catch(console.error);
+	setTimeout(function () {
+		if (!voiceChannel.members.get(bot.user.id))
+		{
+			//restart();
+		}			
+	}, 5000);
   	}
 });
 
