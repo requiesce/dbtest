@@ -12,19 +12,20 @@ client.on('message', message => {
 	
     if (message.content === '!summon') {
     	message.reply('im trying to join your voice channel :heart:');
-  	}
-});
+	    
+	    
 
-function summon(voiceChannel)
-{
 	voiceChannel.join().then(connection => {voice_connection = connection;}).catch(console.error);
 	setTimeout(function () {
 		if (!voiceChannel.members.get(bot.user.id))
 		{
-			//restart();
+			restart();
 		}			
 	}, 5000);
-}
+
+	    
+  	}
+});
 
 
 // THIS  MUST  BE  THIS  WAY
