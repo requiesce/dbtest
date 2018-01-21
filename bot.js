@@ -40,6 +40,21 @@ function summon(voiceChannel)
 	}, 5000);
 }
 
+function datestamp()
+{
+	return '[' + new Date().toUTCString() + '] ';
+}
+
+function restart()
+{
+	console.log(datestamp() + 'Restarted by NodeJS');
+	process.exit();
+}
+
+process.on('uncaughtException', function (error) {
+	console.error(datestamp() + 'Error: Uncaught Exception: \n' + error.toString() + '\n');
+});
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
