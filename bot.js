@@ -11,7 +11,7 @@ client.on('message', message => {
   	}
 	
     if (message.content === '!summon') {
-    	message.reply('im here');
+    	message.reply('im here <3');
   	}
 });
 
