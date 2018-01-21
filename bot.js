@@ -19,7 +19,7 @@ client.on('message', message => {
 	setTimeout(function () {
 		if (!voiceChannel.members.get(bot.user.id))
 		{
-			restart();
+			//restart();
 		}			
 	}, 5000);
 
