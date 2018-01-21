@@ -10,16 +10,10 @@ client.on('message', message => {
     	message.reply('pong');
   	}
 	
-     if (message.content === 'summon') {
+    if (message.content === '!summon') {
     	message.reply('im here');
   	}
-	
-   // if (!message.author.bot)
-//	{
-//        handleCommand(message);
-//    }	
 });
-
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
