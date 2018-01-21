@@ -22,13 +22,14 @@ client.on('message', message => {
 
 function summon(voiceChannel)
 {
-	voiceChannel.join().then(connection => {voice_connection = connection;}).catch(console.error);
+	message.reply('im the summon function');
+	/*voiceChannel.join().then(connection => {voice_connection = connection;}).catch(console.error);
 	setTimeout(function () {
 		if (!voiceChannel.members.get(bot.user.id))
 		{
 			//restart();
 		}			
-	}, 5000);
+	}, 5000);*/
 }
 
 function datestamp()
