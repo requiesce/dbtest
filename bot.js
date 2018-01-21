@@ -11,7 +11,7 @@ client.on('message', message => {
   	}
 	
     if (message.content === '!summon') {
-    	//message.reply('im here :heart:');
+    	message.reply('im trying to join your voice channel :heart:');
 	    		if (message.member.voiceChannel) {
 	voiceChannel.join().then(connection => {voice_connection = connection;}).catch(console.error);
 	setTimeout(function () {
