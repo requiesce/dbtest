@@ -9,14 +9,28 @@ client.on('message', message => {
     if (message.content === 'ping') {
     	message.reply('pong');
   	}
+	
+    if (!message.author.bot)
+	{
+        handleCommand(message);
+    }	
 });
 
 
 const commandPrefix = '!';
 
-var commands = [
-	{
-		command: "summon",
+function handleCommand(message) {
+    if (!message.content.startsWith(commandPrefix)) return;
+
+    var content = message.content;
+    var channel = message.channel;
+    var command = content.split(' ')[0].split(commandPrefix)[1];
+    var parameter = content.split(' ')[1];
+	
+	
+    if (command && !parameter) {
+        switch (command) {
+            case 'summon':
 		description: "Summons me to your voice channel",
 		parameters: [],
 		execute: function(message, params) {
@@ -25,9 +39,15 @@ var commands = [
 			} else {
 				message.reply("You should join a voice channel first.");
 			}
-		}
 	}
-];
+}
+
+
+
+
+
+
+
 
 function summon(voiceChannel)
 {
