@@ -13,12 +13,13 @@ client.on('message', message => {
     if (message.content === '!summon') {
     	message.reply('im trying to join your voice channel :heart:');
 	   
-/*	if (message.member.voiceChannel) {
+	if (message.member.voiceChannel) {
 		summon(message.member.voiceChannel);
 	} else {
 		message.reply("You should join a voice channel first.");
 		}
-  	} */
+  	} 
+    }
 });
 
 
